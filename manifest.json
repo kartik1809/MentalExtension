@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "MindMap Tracker",
+    "version": "1.0",
+    "description": "Tracks content consumption across various websites and analyzes its impact.",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs"
+    ],
+    "host_permissions": [
+        "http://localhost:3000/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*",
+                "*://*.netflix.com/*",
+                "*://*.amazon.com/*",
+                "*://*.facebook.com/*",
+                "*://*.twitter.com/*",
+                "*://*.bbc.com/*",
+                "*://*.indiatimes.com/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ]
+}
