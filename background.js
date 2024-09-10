@@ -7,6 +7,8 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         const allowedDomains = [
             'www.youtube.com',
             'www.x.com',
+            'www.X.com',
+            'x.com',
             'www.instagram.com',
         ];
         const url = new URL(tab.url);
